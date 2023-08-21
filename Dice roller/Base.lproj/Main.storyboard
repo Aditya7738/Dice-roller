@@ -1,24 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Dice_roller" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dice Roller App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLm-CE-ikv">
+                                <rect key="frame" x="121.66666666666669" y="75" width="150" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="S5w-wG-fud" userLabel="dice 1">
+                                <rect key="frame" x="16" y="169.33333333333334" width="150" height="150.00000000000003"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="4hC-8P-umt" userLabel="dice 1">
+                                <rect key="frame" x="227" y="339.33333333333331" width="150" height="150"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnk-dm-uip">
+                                <rect key="frame" x="148" y="667.33333333333337" width="97" height="35.666666666666629"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Roll dices"/>
+                                <connections>
+                                    <action selector="rolldice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VAV-8n-QPS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMg-bJ-PoA">
+                                <rect key="frame" x="102" y="120.33333333333331" width="100" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNL-aa-ILC">
+                                <rect key="frame" x="211" y="120.33333333333331" width="47" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vnk-dm-uip" firstAttribute="top" secondItem="S5w-wG-fud" secondAttribute="bottom" constant="348" id="5Kr-JN-Bzy"/>
+                            <constraint firstItem="pMg-bJ-PoA" firstAttribute="top" secondItem="TLm-CE-ikv" secondAttribute="bottom" constant="20" id="9bZ-wW-xs6"/>
+                            <constraint firstItem="QNL-aa-ILC" firstAttribute="leading" secondItem="pMg-bJ-PoA" secondAttribute="trailing" constant="9" id="BXK-Wp-mUL"/>
+                            <constraint firstItem="S5w-wG-fud" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="GL3-Sf-0Na"/>
+                            <constraint firstItem="vnk-dm-uip" firstAttribute="top" secondItem="4hC-8P-umt" secondAttribute="bottom" constant="178" id="KD9-7t-SPm"/>
+                            <constraint firstItem="vnk-dm-uip" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="148" id="KHe-5S-6kK"/>
+                            <constraint firstItem="S5w-wG-fud" firstAttribute="top" secondItem="pMg-bJ-PoA" secondAttribute="bottom" constant="26" id="Lw7-Tx-cyx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S5w-wG-fud" secondAttribute="trailing" constant="227" id="MFz-Eo-yHb"/>
+                            <constraint firstItem="TLm-CE-ikv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Qrr-oL-Q5Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4hC-8P-umt" secondAttribute="trailing" constant="16" id="RqS-rU-Faa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QNL-aa-ILC" secondAttribute="trailing" constant="135" id="SFM-FR-DXG"/>
+                            <constraint firstItem="TLm-CE-ikv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TFD-U6-Z5l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vnk-dm-uip" secondAttribute="bottom" constant="115" id="Xca-kW-YCr"/>
+                            <constraint firstItem="4hC-8P-umt" firstAttribute="top" secondItem="QNL-aa-ILC" secondAttribute="bottom" constant="196" id="nye-Qa-vek"/>
+                            <constraint firstItem="4hC-8P-umt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="227" id="sP2-QE-GEa"/>
+                            <constraint firstItem="vnk-dm-uip" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tMY-bZ-MHF"/>
+                            <constraint firstItem="pMg-bJ-PoA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="102" id="wBA-Vd-hPR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vnk-dm-uip" secondAttribute="trailing" constant="148" id="zVg-Dh-Mrn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dice1img" destination="S5w-wG-fud" id="Wq0-hB-EPz"/>
+                        <outlet property="dice2img" destination="4hC-8P-umt" id="Aba-Bd-lu3"/>
+                        <outlet property="scoreLabel" destination="QNL-aa-ILC" id="FZT-T0-VWY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="38.931297709923662" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dice1" width="150" height="150"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
